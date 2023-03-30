@@ -1,0 +1,23 @@
+sqoop import \
+--connect jdbc:mysql://localhost/commerce \
+--username hadoop \
+--password password \
+--table customers \
+--hive-import \
+--hive-table commerce.customers -m 1;
+
+sqoop import \
+--connect jdbc:mysql://localhost/commerce \
+--username hadoop \
+--password password \
+--table products \
+--hive-import \
+--hive-table commerce.products -m 1;
+
+sqoop import \
+--connect jdbc:mysql://localhost/commerce \
+--username hadoop \
+--password password \
+--table ratings \
+--hive-import \
+--hive-table commerce.ratings -m 1;
